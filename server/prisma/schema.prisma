@@ -1,0 +1,22 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+ 
+// CRIANDO O SQL A PARTIR DAQUI
+
+model Habit {                                               // TABELA DO HABITO
+  id         String   @id @default(uuid())                  //GERA UM ID PRO HABITO
+  title      String                                         //TITULO DO HABITO
+  created_at DateTime                                       //DATA QUE FOI CRIADO
+
+  @@map("habits")                                           // NOME QUE TABELA SERÁ CRIADA
+
+}
