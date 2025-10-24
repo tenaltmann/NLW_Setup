@@ -15,12 +15,22 @@ npm i @prisma/client
 
 npx prisma init --datasource-provider SQLite
 
-npm i @fastify/cors
+
+
+
+
+No caminho /web/--------------------
 
 npm create vite@latest
 
-npm install             No caminho /web/
+npm i @fastify/cors
 
+npm install      
+
+npm install -D tailwindcss@3.4.13 postcss autoprefixer
+    tailwindcss@3.4.13 (plug-in do postcss na versão mais estavel recente)
+    postcss (Ferramenta para automatizar tarefas no css)
+    autoprefixer (Ferramenta que adiciona prefixos de browser "-webfix-")
 
 ------------------------------------
 localhosts
@@ -30,3 +40,6 @@ node:
 
 prisma
     npx prisma studio
+
+tailwind
+    npx tailwindcss init -p
