@@ -1,38 +1,50 @@
-# ===== Node.js & Web =====
-# Ignora node_modules em QUALQUER pasta
-node_modules/
+# =======================================
+# 🌐 Gitignore Raiz - NLW Setup Project
+# =======================================
 
-# Ignora builds do front-end
-web/build/
-web/dist/
-web/out/
-
-# Ignora builds do back-end
-server/dist/
-
-# Logs
+# Logs e dependências comuns
+logs
 *.log
-logs/
 npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
+lerna-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Node e build output
+node_modules
+dist
+dist-ssr
+*.local
 
 # Arquivos de ambiente
 .env
 .env.*
-!env.example  # mantém o exemplo se tiver
 
-# Cache
-.cache/
-.next/
-.nuxt/
-.svelte-kit/
+# Editor / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# IDE / editor
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
+# =======================================
+# Ignorar subpastas (aplicações internas)
+# =======================================
+# Cada uma tem seu próprio .gitignore, mas garantimos por segurança:
+server/node_modules
+server/dist
+web/node_modules
+web/dist
 
-# Test coverage
-coverage/
+# =======================================
+# Excluir arquivos de cache / build gerais
+# =======================================
+*.cache
+*.tsbuildinfo

@@ -16,3 +16,17 @@ npm i @prisma/client
 npx prisma init --datasource-provider SQLite
 
 npm i @fastify/cors
+
+npm create vite@latest
+
+npm install             No caminho /web/
+
+
+------------------------------------
+localhosts
+
+node:
+    npm run dev
+
+prisma
+    npx prisma studio
