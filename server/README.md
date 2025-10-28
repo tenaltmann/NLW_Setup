@@ -15,6 +15,8 @@ npm i @prisma/client
 
 npx prisma init --datasource-provider SQLite
 
+npx prisma migrate dev
+
 
 
 
@@ -32,6 +34,9 @@ npm install -D tailwindcss@3.4.13 postcss autoprefixer
     postcss (Ferramenta para automatizar tarefas no css)
     autoprefixer (Ferramenta que adiciona prefixos de browser "-webfix-")
 
+
+npx tailwindcss init -p
+
 ------------------------------------
 localhosts
 
@@ -42,4 +47,3 @@ prisma
     npx prisma studio
 
 tailwind
-    npx tailwindcss init -p
