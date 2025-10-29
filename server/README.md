@@ -47,3 +47,18 @@ prisma
     npx prisma studio
 
 tailwind
+
+
+npx prisma migrate deploy  #aplica as migrations quando trocar de computador
+
+
+
+-------------------------------------
+
+MOBILE
+
+npm i -g expo cli               #baixar o expo cli na maquina
+
+
+npx create-expo-app mobile --template
+
