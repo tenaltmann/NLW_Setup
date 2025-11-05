@@ -18,5 +18,12 @@ model Habit {                                               // TABELA DO HABITO
   created_at DateTime                                       //DATA QUE FOI CRIADO
 
   @@map("habits")                                           // NOME QUE TABELA SERÁ CRIADA
+}
 
+model Day {
+  id        String    @id @default(uuid())                  //GERA UM ID PRO HABITO
+  date      DateTime                                        //DEFINE O DATA
+
+  @@unique([date])                                          //TORNA O DIA ÚNICO DE MODO A NÃO PERMITIR CRIAÇÃO DE DOIS DIAS IGUAIS
+  @@map("days")                                             // NOME QUE TABELA SERÁ CRIADA
 }
