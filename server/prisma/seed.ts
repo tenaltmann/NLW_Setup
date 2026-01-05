@@ -13,19 +13,44 @@ const secondHabitCreationDate = new Date('2026-01-04T03:00:00.000')
 const thirdHabitId = 'fa1a1bcf-3d87-4626-8c0d-d7fd1255ac00'
 const thirdHabitCreationDate = new Date('2026-01-08T03:00:00.000')
 
-async function main() {
+async function run() {
 
     await prisma.habit.deleteMany()         //Deleta os hábitos eventualmente que criados para que por padrão seja mostrado apenas o conteudo do seed.ts
+    await prisma.day.deleteMany()
 
-    await prisma.habit.create({             // Cria o habito que aparecera para teste no banco de dados
-        data: {
-            title:'Beber 2L de água',
-            created_at: new Date('2026-01-10T00:00:00.000z')
-        }
-    })
+
+    /**
+     * Create habits
+     */
+
+    await Promise.all([
+        prisma.habit.create({
+            data: {
+                id: firstHabitId,
+                title:'Beber Água',
+                created_at: firstHabitCreationDate,
+                weekDays: {
+                    create:[
+                        { week_day: '1' },
+                        { week_day: '2' },
+                        { week_day: '3' },
+                    ]
+                }
+            }
+
+            
+        }),
+    ])
+
+    //await prisma.habit.create({             // Cria o habito que aparecera para teste no banco de dados
+    //    data: {
+    //        title:'Beber 2L de água',
+    //        created_at: new Date('2026-01-10T00:00:00.000z')
+    //    }
+    //})
 }
 
-main()
+run()
     .then(async () => {
         await prisma.$disconnect()
     })
