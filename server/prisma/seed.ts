@@ -79,6 +79,24 @@ async function run() {
     //        created_at: new Date('2026-01-10T00:00:00.000z')
     //    }
     //})
+
+    await Promise.all([
+        /**
+         * Habits (Complete/Available): 1/1
+         */
+        prisma.day.create({
+            data: {
+                date: new Date('2026-01-04T03:00:00.000'),
+                dayHabits:  {
+                    create: {
+                        habit_id: firstHabitId,
+                    }
+                }
+            }
+        }),
+
+
+    ])
 }
 
 run()
