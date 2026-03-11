@@ -30,7 +30,7 @@ model Habit {
 model HabitWeekDays {
   id       String @id @default(uuid())
   habit_id String
-  week_day String
+  week_day Int                                // alterado pois o create no routes.ts espperava um numero e nao uma string
 
   habit   Habit  @relation(fields: [habit_id], references: [id])
 
