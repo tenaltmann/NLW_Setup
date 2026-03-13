@@ -26,7 +26,7 @@ export async function appRoutes(app: FastifyInstance) {
                 weekDays: {
                     create: weekDays.map(weekDay => {
                         return {
-                            week_day: weekDay,
+                            week_day: weekDay,                  //43:44 da video aula
                         }
                     })
                 }
@@ -38,3 +38,4 @@ export async function appRoutes(app: FastifyInstance) {
 }
 
 
+///// 46:40 envio de post com insomnia
